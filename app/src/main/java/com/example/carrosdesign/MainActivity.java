@@ -7,11 +7,15 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +25,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        RecyclerView lstCarros;
+        final ArrayList<Carro> carros;
+        LinearLayoutManager llm;
+        final AdaptadorCarro adapter;
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+
+        lstCarros=findViewById(R.id.lstCarro);
+        carros =new ArrayList<>();
+        llm=new LinearLayoutManager(this);
+        adapter= new AdaptadorCarro(carros, this);
+
+        llm.setOrientation(RecyclerView.VERTICAL);
+        lstCarros.setLayoutManager(llm);
+        lstCarros.setAdapter(adapter);
+
+        FloatingActionButton fab = findViewById(R.id.btnAgregar);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
