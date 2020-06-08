@@ -2,10 +2,16 @@ package com.example.carrosdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
@@ -23,6 +29,8 @@ public class AgregarCarro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_carro);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         placa=findViewById(R.id.txtPlaca);
         marca=findViewById(R.id.txtMarca);
         modelo=findViewById(R.id.txtModelo);
@@ -39,6 +47,7 @@ public class AgregarCarro extends AppCompatActivity {
         fotos.add(R.drawable.carro6);
         fotos.add(R.drawable.carro7);
 
+        storageReference= FirebaseStorage.getInstance().getReference();
     }
 
     public void guardar(View v){
@@ -46,15 +55,21 @@ public class AgregarCarro extends AppCompatActivity {
         int foto;
         Carro carro;
 
+        InputMethodManager imp=(InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
         plac=placa.getText().toString();
         marc=marca.getText().toString();
         model=modelo.getText().toString();
         colo=color.getText().toString();
         preci=precio.getText().toString();
         foto = foto_aleatoria();
-        id=Datos.getId();
-        carro=new Carro(plac, marc, model, colo, preci, foto, id);
+        //id=Datos.getId();
+        carro=new Carro(plac, marc, model, colo, preci, foto);
         carro.guardar();
+        /*subir_foto(id);
+        limpiar();
+        imp.hideSoftInputFromWindow(cedula.getWindowToken(),0);
+        Snackbar.make(v, getString(R.string.mensaje_guardado_correcto),Snackbar.LENGTH_LONG).show();*/
     }
     public int foto_aleatoria(){
         int foto_seleccionada;
