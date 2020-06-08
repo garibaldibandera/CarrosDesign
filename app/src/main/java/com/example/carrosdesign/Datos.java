@@ -17,20 +17,20 @@ public class Datos {
         return databaseReference.push().getKey();
     }
 
-    public static void guardar(Carro p){
-        //personas.add(p);
-        databaseReference.child(db).child(p.getId()).setValue(p);
+    public static void guardar(Carro c){
+        carros.add(c);
+        databaseReference.child(db).child(c.getId()).setValue(c);
     }
     public static ArrayList<Carro> obtener(){
         return carros;
     }
 
-    public static void setPersonas(ArrayList<Carro> carros){
+    public static void setCarros(ArrayList<Carro> carros){
         carros = carros;
     }
 
-    public static void eliminar(Carro p){
-        databaseReference.child(db).child(p.getId()).removeValue();
-        storageReference.child(p.getId()).delete();
+    public static void eliminar(Carro c){
+        databaseReference.child(db).child(c.getId()).removeValue();
+        storageReference.child(c.getId()).delete();
     }
 }

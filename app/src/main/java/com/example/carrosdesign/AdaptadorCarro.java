@@ -1,5 +1,6 @@
 package com.example.carrosdesign;
 
+import android.net.Uri;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,17 +11,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+
 
 //public class AdaptadorCarro {
 public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroViewHolder>{
     private ArrayList<Carro> carros;
     private OnCarroClickListener clickListener;
 
-    public AdaptadorCarro(ArrayList<Carro> carros, MainActivity mainActivity){
+    public AdaptadorCarro(ArrayList<Carro> carros, OnCarroClickListener clickListener){
         this.carros=carros;
         this.clickListener =clickListener;
 
@@ -35,14 +40,35 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
     @Override
     public void onBindViewHolder(@NonNull final AdaptadorCarro.CarroViewHolder holder, int position) {
         final Carro c=carros.get(position);
-        StorageReference = storageReference;
+        StorageReference  storageReference;
         storageReference = FirebaseStorage.getInstance().getReference();
 
+        storageReference.child(c.getId()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>(){
+
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(holder.foto);
+            }
+        });
+
+        holder.foto.setImageResource(c.getFoto());
+        holder.placa.setText(c.getPlaca());
+        holder.marca.setText(c.getMarca());
+        holder.modelo.setText(c.getModelo());
+        holder.color.setText(c.getColor());
+        holder.precio.setText(c.getPrecio());
+
+        holder.v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickListener.onCarroClick(c);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return carros.size();
     }
 
     public static class CarroViewHolder extends RecyclerView.ViewHolder{
@@ -65,4 +91,8 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
 
         }
     }
+    public interface OnCarroClickListener{
+        void onCarroClick(Carro c);
+    }
 }
+
