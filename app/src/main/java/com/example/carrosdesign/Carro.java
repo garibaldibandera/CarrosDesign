@@ -81,6 +81,7 @@ public class Carro {
     public void setFoto(int foto) {
         this.foto = foto;
     }
+
     public void guardar() {Datos.guardar(this);}
 
     public void eliminar(){

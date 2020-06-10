@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements AdaptadorCarro.On
         lstCarros.setAdapter(adapter);
 
         fab = findViewById(R.id.btnAgregar);
-        //fab.setOnClickListener(this);
-        //fab = findViewById(R.id.btnAgregar);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.child(db).addValueEventListener(new ValueEventListener() {

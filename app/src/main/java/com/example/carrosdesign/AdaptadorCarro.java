@@ -18,9 +18,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-
-
-//public class AdaptadorCarro {
 public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroViewHolder>{
     private ArrayList<Carro> carros;
     private OnCarroClickListener clickListener;

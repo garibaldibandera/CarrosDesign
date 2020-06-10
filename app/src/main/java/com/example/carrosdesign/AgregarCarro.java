@@ -101,12 +101,12 @@ public class AgregarCarro extends AppCompatActivity {
         Intent i= new Intent(AgregarCarro.this, MainActivity.class);
         startActivity(i);
     }
-    /* public void seleccionar_foto(View v){
+  /*   public void seleccionar_foto(View v){
         Intent i= new Intent();
         i.setType("image/*");
         i.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(i,getString(R.string.titulo_ventana_seleccionar_foto)),1);
-    }
+    }*/
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
 
@@ -119,5 +119,5 @@ public class AgregarCarro extends AppCompatActivity {
             }
         }
 
-    }*/
+    }
 }

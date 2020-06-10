@@ -12,21 +12,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        fab:menu_fab_size="normal"
-        fab:menu_showShadow="true"
-        fab:menu_shadowColor="#66000000"
-        fab:menu_shadowRadius="4dp"
-        fab:menu_shadowXOffset="1dp"
-        fab:menu_shadowYOffset="3dp"
-        fab:menu_colorNormal="@color/colorAccent"
-        fab:menu_colorPressed="@color/colorAccent"
-        fab:menu_colorRipple="#99FFFFFF"
-        fab:menu_animationDelayPerItem="50"
-        fab:menu_icon="@drawable/fab_add"
-        fab:menu_buttonSpacing="0dp"
-        fab:menu_labels_margin="0dp"
-        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
-        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
+        app:menu_animationDelayPerItem="50"
+        app:menu_buttonSpacing="0dp"
+        app:menu_colorNormal="@color/colorAccent"
+        app:menu_colorPressed="@color/colorAccent"
+        app:menu_fab_size="normal"
+        app:menu_labels_margin="0dp"
+        app:menu_shadowRadius="4dp"
+        app:menu_shadowXOffset="1dp"
+        app:menu_shadowYOffset="3dp"
+        app:menu_showShadow="true">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_item"
@@ -34,8 +29,8 @@
             android:layout_height="wrap_content"
             android:onClick="eliminar"
             android:src="@android:drawable/ic_menu_delete"
-            fab:fab_label="@string/etiqueta_boton_eliminar"
-            fab:fab_size="mini" />
+            app:fab_label="@string/etiqueta_boton_eliminar"
+            app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
@@ -125,8 +120,7 @@
                 <TextView
                     android:id="@+id/lblModeloDetalle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp" />
+                    android:layout_height="wrap_content" />
 
             </TableRow>
 
