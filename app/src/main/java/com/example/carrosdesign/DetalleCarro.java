@@ -43,7 +43,7 @@ public class DetalleCarro extends AppCompatActivity {
         intent = getIntent();
         bundle = intent.getBundleExtra("datos");
 
-        fot = bundle.getInt("foto");
+      //  fot = bundle.getInt("foto");
         id = bundle.getString("id");
         plac = bundle.getString("placa");
         marc = bundle.getString("marca");
@@ -59,14 +59,14 @@ public class DetalleCarro extends AppCompatActivity {
                 Picasso.get().load(uri).into(foto);
             }
         });
-        foto.setImageResource(fot);
+      //  foto.setImageResource(fot);
         placa.setText(plac);
         marca.setText(marc);
         modelo.setText(model);
         color.setText(colo);
         precio.setText(preci);
 
-        c=new Carro(plac, marc, model, colo, preci, 0, id);
+        c = new Carro(plac, marc, model, colo, preci, 0, id);
     }
 
     public void onBackPressed(){

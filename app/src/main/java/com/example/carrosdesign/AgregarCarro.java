@@ -73,6 +73,7 @@ public class AgregarCarro extends AppCompatActivity {
 
     public void subir_foto (String id){
         StorageReference child = storageReference.child(id);
+        Uri uri = Uri.parse("android.resourse://"+R.class.getPackage().getName()+"/"+foto);
         UploadTask uploadTask = child.putFile(uri);
     }
 
@@ -93,7 +94,6 @@ public class AgregarCarro extends AppCompatActivity {
         color.setText("");
         precio.setText("");
         placa.requestFocus();
-        foto.setImageResource(android.R.drawable.ic_menu_gallery);
     }
 
     public void onBackPressed(){
@@ -108,7 +108,7 @@ public class AgregarCarro extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(i,getString(R.string.titulo_ventana_seleccionar_foto)),1);
     }*/
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+   /* protected void onActivityResult(int requestCode, int resultCode, Intent data){
 
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -119,5 +119,5 @@ public class AgregarCarro extends AppCompatActivity {
             }
         }
 
-    }
+    }*/
 }

@@ -36,7 +36,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
 
     @Override
     public void onBindViewHolder(@NonNull final AdaptadorCarro.CarroViewHolder holder, int position) {
-        final Carro c=carros.get(position);
+        final Carro c = carros.get(position);
         StorageReference  storageReference;
         storageReference = FirebaseStorage.getInstance().getReference();
 
@@ -48,7 +48,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
             }
         });
 
-        holder.foto.setImageResource(c.getFoto());
+       // holder.foto.setImageResource(c.getFoto());
         holder.placa.setText(c.getPlaca());
         holder.marca.setText(c.getMarca());
         holder.modelo.setText(c.getModelo());

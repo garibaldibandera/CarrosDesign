@@ -21,6 +21,7 @@ public class Carro {
     public Carro (){
 
     }
+
     public Carro (String placa, String marca, String modelo, String color, String precio, int foto, String id){
         this.placa=placa;
         this.marca=marca;
