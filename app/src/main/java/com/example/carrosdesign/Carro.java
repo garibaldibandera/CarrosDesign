@@ -15,6 +15,8 @@ public class Carro {
         this.modelo=modelo;
         this.color=color;
         this.precio=precio;
+        this.foto = foto;
+
     }
     public Carro (){
 
@@ -25,6 +27,7 @@ public class Carro {
         this.modelo=modelo;
         this.color=color;
         this.precio=precio;
+        this.foto=foto;
         this.id= id;
     }
 
@@ -87,4 +90,5 @@ public class Carro {
     public void eliminar(){
         Datos.eliminar(this);
     }
+
 }

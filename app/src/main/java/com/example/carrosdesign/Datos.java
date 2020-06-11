@@ -18,8 +18,8 @@ public class Datos {
     }
 
     public static void guardar(Carro c){
-        carros.add(c);
-        //databaseReference.child(db).child(c.getId()).setValue(c);
+      //  carros.add(c);
+        databaseReference.child(db).child(c.getId()).setValue(c);
     }
     public static ArrayList<Carro> obtener(){
         return carros;

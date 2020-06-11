@@ -28,7 +28,6 @@ import static com.example.carrosdesign.Datos.getId;
 public class MainActivity extends AppCompatActivity implements AdaptadorCarro.OnCarroClickListener{
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -83,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements AdaptadorCarro.On
         i=new Intent (MainActivity.this,AgregarCarro.class);
         startActivity(i);
         finish();
-
     }
 
     @Override

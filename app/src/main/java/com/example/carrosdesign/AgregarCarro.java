@@ -63,7 +63,7 @@ public class AgregarCarro extends AppCompatActivity {
         preci=precio.getText().toString();
         foto = foto_aleatoria();
         id=Datos.getId();
-        carro=new Carro(plac, marc, model, colo, preci, foto);
+        carro=new Carro(plac, marc, model, colo, preci, foto, id);
         carro.guardar();
         subir_foto(id);
         limpiar();

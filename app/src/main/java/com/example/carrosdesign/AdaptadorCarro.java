@@ -84,6 +84,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
             placa = v.findViewById(R.id.lblPlaca);
             marca = v.findViewById(R.id.lblMarca);
             modelo = v.findViewById(R.id.lblModelo);
+            color = v.findViewById(R.id.lblColor);
             precio = v.findViewById(R.id.lblPrecio);
 
         }
