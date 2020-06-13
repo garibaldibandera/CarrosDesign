@@ -16,7 +16,6 @@ public class Carro {
         this.color=color;
         this.precio=precio;
         this.foto = foto;
-
     }
     public Carro (){
 
