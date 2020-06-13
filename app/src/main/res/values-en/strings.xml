@@ -30,4 +30,5 @@
     <string name="error_color">"Type the color "</string>
     <string name="error_precio">"Enter the price "</string>
     <string name="error_modelo_ano">"Enter a valid year for the model "</string>
+    <string name="error_placa_existente">The typed plate already exists</string>
 </resources>
