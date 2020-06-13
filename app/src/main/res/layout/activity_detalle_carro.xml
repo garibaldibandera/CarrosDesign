@@ -48,11 +48,12 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgFotoDetalle"
             android:layout_width="match_parent"
-            android:layout_height="96dp"
-            android:src="@drawable/carro0" />
+            android:layout_height="200dp"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
 
         <TableLayout
             android:id="@+id/tblTablaDetalle"

@@ -28,4 +28,13 @@
     <string name="opcion_no">No</string>
     <string name="titulo_ventana_seleccionar_foto">Seleccione la foto</string>
 
+    <string name="error_placa">Digite la placa</string>
+    <string name="error_marca">Digite la marca</string>
+    <string name="error_modelo">Digite el modelo</string>
+    <string name="error_modelo_ano">Digite un año valido para el modelo</string>
+    <string name="error_color">Digite el color</string>
+    <string name="error_precio">Digite el precio</string>
+
+
+
 </resources>

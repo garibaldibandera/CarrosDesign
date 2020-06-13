@@ -24,4 +24,10 @@
     <string name="opcion_si">Yes</string>
     <string name="opcion_no">Not</string>
     <string name="titulo_ventana_seleccionar_foto">"Select the photo "</string>
+    <string name="error_placa">"Type plate "</string>
+    <string name="error_marca">"Type the mark "</string>
+    <string name="error_modelo">"Enter a valid year for the model "</string>
+    <string name="error_color">"Type the color "</string>
+    <string name="error_precio">"Enter the price "</string>
+    <string name="error_modelo_ano">"Enter a valid year for the model "</string>
 </resources>

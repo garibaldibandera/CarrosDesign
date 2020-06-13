@@ -23,8 +23,8 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
     private OnCarroClickListener clickListener;
 
     public AdaptadorCarro(ArrayList<Carro> carros, OnCarroClickListener clickListener){
-        this.carros=carros;
-        this.clickListener =clickListener;
+        this.carros = carros;
+        this.clickListener = clickListener;
 
     }
 
@@ -48,7 +48,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
             }
         });
 
-       // holder.foto.setImageResource(c.getFoto());
+        holder.foto.setImageResource(c.getFoto());
         holder.placa.setText(c.getPlaca());
         holder.marca.setText(c.getMarca());
         holder.modelo.setText(c.getModelo());
@@ -86,7 +86,6 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
             modelo = v.findViewById(R.id.lblModelo);
             color = v.findViewById(R.id.lblColor);
             precio = v.findViewById(R.id.lblPrecio);
-
         }
     }
     public interface OnCarroClickListener{

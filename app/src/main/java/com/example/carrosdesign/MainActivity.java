@@ -74,14 +74,12 @@ public class MainActivity extends AppCompatActivity implements AdaptadorCarro.On
 
             }
         });
-
-
     }
     public void agregar(View v){
         Intent i;
         i=new Intent (MainActivity.this,AgregarCarro.class);
         startActivity(i);
-        finish();
+      //  finish();
     }
 
     @Override
@@ -102,6 +100,6 @@ public class MainActivity extends AppCompatActivity implements AdaptadorCarro.On
         intent=new Intent(MainActivity.this,DetalleCarro.class);
         intent.putExtra("datos",bundle);
         startActivity(intent);
-        finish();
+       // finish();
     }
 }
