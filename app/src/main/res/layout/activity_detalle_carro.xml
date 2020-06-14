@@ -78,8 +78,9 @@
 
                 <TextView
                     android:id="@+id/lblPlacaDetalle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="161dp"
                     android:layout_height="wrap_content"
+                    android:gravity="left"
                     android:textSize="18sp" />
             </TableRow>
 
@@ -101,6 +102,7 @@
                     android:id="@+id/lblMarcaDetalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="left"
                     android:textSize="18sp" />
             </TableRow>
 
@@ -121,7 +123,8 @@
                 <TextView
                     android:id="@+id/lblModeloDetalle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:gravity="left" />
 
             </TableRow>
 
@@ -143,6 +146,7 @@
                     android:id="@+id/lblColorDetalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="left"
                     android:textSize="18sp" />
 
             </TableRow>
@@ -165,6 +169,7 @@
                     android:id="@+id/lblPrecioDetalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="left"
                     android:textSize="18sp" />
 
             </TableRow>

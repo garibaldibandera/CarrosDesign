@@ -29,6 +29,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.Random;
 
+@RequiresApi(api = Build.VERSION_CODES.N)
 public class AgregarCarro extends AppCompatActivity {
     private ArrayList<Integer> fotos;
     private EditText placa, marca, modelo, color, precio;
@@ -79,23 +80,13 @@ public class AgregarCarro extends AppCompatActivity {
 
         storageReference= FirebaseStorage.getInstance().getReference();
 
-     /*   placa.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if (!hasFocus) {
-                    Toast.makeText(AgregarCarro.this, "Focus Lose", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(AgregarCarro.this, "Get Focus", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });*/
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void guardar(View v){
         if(placa.getText().toString().isEmpty()){
             placa.setError(error_placa);
+            placa.requestFocus();
         }else {
             validarplaca(placa.getText().toString());
         }
@@ -108,19 +99,24 @@ public class AgregarCarro extends AppCompatActivity {
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        //Map of all products which has city equal to mCurrentUserCity
+                         int errorano=year+1;
                         Carro carro = dataSnapshot.getValue(Carro.class);
                         if (carro == null) {
                             if(marca.getText().toString().isEmpty()){
                                 marca.setError(error_marca);
+                                marca.requestFocus();
                             }else if(modelo.getText().toString().isEmpty()){
                                 modelo.setError(error_modelo);
-                            }else if(Double.parseDouble(modelo.getText().toString())> year+1){
-                                modelo.setError(error_modelo_ano);
+                                modelo.requestFocus();
+                            }else if(Double.parseDouble(modelo.getText().toString())> errorano){
+                                modelo.setError(error_modelo_ano+errorano);
+                                modelo.requestFocus();
                             }else if(color.getText().toString().isEmpty()) {
                                 color.setError(error_color);
+                                color.requestFocus();
                             }else if(precio.getText().toString().isEmpty()) {
                                 precio.setError(error_precio);
+                                precio.requestFocus();
                             }else {
                                 String id = Datos.getId();
                                 carro = new Carro(placa.getText().toString(), marca.getText().toString(), modelo.getText().toString(), color.getText().toString(), precio.getText().toString(), foto_aleatoria(), id);

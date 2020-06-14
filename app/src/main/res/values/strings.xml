@@ -32,7 +32,7 @@
     <string name="error_placa_existente">La placa digitada ya existe</string>
     <string name="error_marca">Digite la marca</string>
     <string name="error_modelo">Digite el modelo</string>
-    <string name="error_modelo_ano">Digite un año valido para el modelo</string>
+    <string name="error_modelo_ano">El modelo no puede ser mayor a </string>
     <string name="error_color">Digite el color</string>
     <string name="error_precio">Digite el precio</string>
 
